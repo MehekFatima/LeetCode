@@ -1,3 +1,4 @@
+import java.util.*;
 class Solution {
     public static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
@@ -12,16 +13,11 @@ class Solution {
     }
 
     public static void main(String args[]) {
-        int[] nums = {3, 2, 4};
+        int[] nums = {3, 1, 4};
         int target = 4;
 
         int[] result = twoSum(nums, target);
 
-        if (result.length == 2) {
-            System.out.println("Indices of the two numbers that sum up to the target:");
-            System.out.println("[" + result[0] + ", " + result[1] + "]");
-        } else {
-            System.out.println("No two numbers found that sum up to the target.");
-        }
+       System.out.println(Arrays.toString(result));
     }
 }

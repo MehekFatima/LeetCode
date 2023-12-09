@@ -3,17 +3,17 @@
  * @return {Function}
  */
 var once = function(fn) {
-    let called = false;
-    let result;
-
-    return function(...args) {
-        if (!called) {
-            called = true;
-            result = fn(...args); 
-            return result;
+     let call = 0;
+    
+	return function(...args){
+        if(call) {
+        call++
+        return undefined
         }
-        return undefined;
-    };
+        
+     call++;
+    return fn(...args)
+    }
 };
 
 

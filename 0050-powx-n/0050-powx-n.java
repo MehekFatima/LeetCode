@@ -9,19 +9,22 @@ class Solution {
         return powRec(x, n);
     }
 
-    private double powRec(double x, int n) {
-        if (n == 0) {
+    private double powRec(double x, int n){
+        if(n==0){
             return 1.0;
         }
-        
-        double half = powRec(x, n / 2);
-        
-        if (n % 2 == 0) {
-            // If n is even, square the result of half
-            return half * half;
-        } else {
-            // If n is odd, multiply half by itself and also by x
-            return half * half * x;
+        if(x==0){
+            return 0.0;
         }
+        double power;
+        if(n%2==0){
+            double half =  powRec(x,n/2);
+            power = half*half;
+        }
+        else{
+            double half =  powRec(x,n/2);
+            power = half*half*x;
+        }
+        return power;
     }
 }
